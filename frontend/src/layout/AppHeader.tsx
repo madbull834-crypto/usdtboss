@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ThemeToggleButton } from "../components/common/ThemeToggleButton";
 import { useSidebar } from "../context/SidebarContext";
+import { CHAIN_ID } from "../evm/client";
 
 const AppHeader: React.FC = () => {
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
@@ -50,7 +51,7 @@ const AppHeader: React.FC = () => {
           {/* Network status - hidden on mobile */}
           <div className="hidden items-center gap-2 rounded-full border border-[#1595A1] bg-[#004E59] px-3 py-1.5 text-xs font-semibold text-white sm:flex">
             <span className="size-2 rounded-full bg-[#00E676] shadow-[0_0_8px_#00E676]" />
-            EVM Testnet
+            {CHAIN_ID === 56 ? "EVM Mainnet" : CHAIN_ID === 97 ? "EVM Testnet" : `EVM Chain ${CHAIN_ID}`}
           </div>
 
           {/* Theme toggle */}
