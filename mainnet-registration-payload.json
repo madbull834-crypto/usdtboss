@@ -1,0 +1,644 @@
+{
+  "bootstrap": "0x3C996F25D3c276F63B5BE0d8D55b356b6A416F7f",
+  "tokenDecimals": 6,
+  "source": "BSC testnet proxy 0x50BB5f822E69130b95408EFE3E156b50c322a4D6",
+  "previousRootMapping": "0x676c28c70b27E64C7b72203821f0db66BF022d65 -> 0x3C996F25D3c276F63B5BE0d8D55b356b6A416F7f",
+  "records": [
+    {
+      "walletaddress": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+      "refaladdress": "0x3C996F25D3c276F63B5BE0d8D55b356b6A416F7f",
+      "level": 12,
+      "amount": "61440.0"
+    },
+    {
+      "walletaddress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "refaladdress": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "refaladdress": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "refaladdress": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x5224BD34CF13797513bF346478AdA8AbC9A80626",
+      "refaladdress": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x3476BA0F301301C6E430C7d51742Dc326ecF9310",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0xA09FbEC38e46899F023036c95c40af6E48Fdd9e4",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x4de3bdF7fAE0E6b65080d03D615e389109Beaf0b",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+      "refaladdress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x50b3bB15ceAD96a60a66625E68fd74E01ac96e21",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x55E055a0D9778279D308434eD9FAA551b80E7cb1",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xD645782050a5fb636312dcA985b5eB54912E0518",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xc765D70F9cc2562Eda35b36919064B7Be95175D8",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x974a256CB8FA242456b6E21706313A0eF30993E1",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xeff73792E4636e382cbF30191A7d70f90FF18C16",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x5D6f439850D0e5EF46dfe015d67b41a12f007318",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xAA2D1A0D1aD4111a6b27c03ba69590EecEA1d19c",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x4Cc2F0d596ccEc4c064d449E97280958edEbf832",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xc1c0e6ECf8f540e0e746eB3810272F2bA0d22235",
+      "refaladdress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x7ADC8fD5172D16219E45A096364dC4C2D163FDe1",
+      "refaladdress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x82b3Bfd1c8876dD58a3a8A60E5C4361E54DE0072",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x371B46AfA2A951BC2aEffAaA6efd6d1a3d945C9d",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xaF9168210B45EB0F660dEF7D08cA0BA7E2272BEf",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x8465efFfdaC1Cb29973458D4a09d5b2A8566A8FE",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xBBa5b2aCcCACa3D228Fa60D12C7582C08B030dc9",
+      "refaladdress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xFdb29360A1e5d48977A3A5fF3dd2cDCbAE03C745",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xa141715b923fA4098Ad5daaE53cA0fB8A8423068",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x209daf88d9Fe0584680AEA5a738816365A72aDA9",
+      "refaladdress": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x8201523eD84454C5b07c02a07Aa6e6a8Ed93d6F1",
+      "refaladdress": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x94f03DF1A4F6ae797bd8b2426d1acaB663BE4605",
+      "refaladdress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xa5eE0230aC0B4430a94BB9DCA471A77b3d5B2515",
+      "refaladdress": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x18B240f15A8B85F92d67fe04dD78425096Df1Ab4",
+      "refaladdress": "0xD645782050a5fb636312dcA985b5eB54912E0518",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xE74b494C3AD773C74ddD1bdd2f8fee485718fc84",
+      "refaladdress": "0xc1c0e6ECf8f540e0e746eB3810272F2bA0d22235",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x2d6f7CAA111487B26619d27d027050474493A436",
+      "refaladdress": "0x4Cc2F0d596ccEc4c064d449E97280958edEbf832",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "refaladdress": "0x82b3Bfd1c8876dD58a3a8A60E5C4361E54DE0072",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x074df8CA5db9bBf513E86757Bdd5a0dbEB13bf57",
+      "refaladdress": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+      "level": 3,
+      "amount": "120.0"
+    },
+    {
+      "walletaddress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "refaladdress": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x8c786602190559C8451d9824E933e3F1091969FD",
+      "refaladdress": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xDbeC720E23463e17733DfeE991667f6c23673D08",
+      "refaladdress": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x9050fA6408B82860CaB1D0Ecf89606a307f8e4aE",
+      "refaladdress": "0x3476BA0F301301C6E430C7d51742Dc326ecF9310",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x2FDC058e51170490565fA3Be08970D69d94c7916",
+      "refaladdress": "0x3476BA0F301301C6E430C7d51742Dc326ecF9310",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "refaladdress": "0x3476BA0F301301C6E430C7d51742Dc326ecF9310",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x24D9DBa9ab961d258545F01650D02f71549032a8",
+      "refaladdress": "0xaF9168210B45EB0F660dEF7D08cA0BA7E2272BEf",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xb6F6973638c2067Bde86ad9726115370Ff1F87A2",
+      "refaladdress": "0x8465efFfdaC1Cb29973458D4a09d5b2A8566A8FE",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x666fD2C19Dd6F0de63e75Cd17aA5310e2AC299b0",
+      "refaladdress": "0xaF9168210B45EB0F660dEF7D08cA0BA7E2272BEf",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x7B88734fe780bF583eFD60D662de1D67cad4d373",
+      "refaladdress": "0xaF9168210B45EB0F660dEF7D08cA0BA7E2272BEf",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x3F3a42dc8288B5a80aAaF1e1386993074be79522",
+      "refaladdress": "0xaF9168210B45EB0F660dEF7D08cA0BA7E2272BEf",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x909d55bFF951986E7F54F3262115642B13Dd461e",
+      "refaladdress": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x31FbcB82066550EaB95Da1D674eAa338917da7D2",
+      "refaladdress": "0xE74b494C3AD773C74ddD1bdd2f8fee485718fc84",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xB1d80BCeF2c31efAc5fe584a213da7349DB5f94F",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x6C6B0F01B4243768336cAa8Bc14b19bAA22E8698",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x565Da6980e2Ce96250A41fFC670240F882C24E03",
+      "refaladdress": "0x8c786602190559C8451d9824E933e3F1091969FD",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xB62dc9db6458fC1A45a85A5638B8d405eED67EC4",
+      "refaladdress": "0x074df8CA5db9bBf513E86757Bdd5a0dbEB13bf57",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xD492d6012BaD0A9Cfc4B83F9BE46CbaA25172f9c",
+      "refaladdress": "0x074df8CA5db9bBf513E86757Bdd5a0dbEB13bf57",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0xCb0dA3a9d285EB397417a303deB317Bdff025000",
+      "refaladdress": "0x074df8CA5db9bBf513E86757Bdd5a0dbEB13bf57",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x21a5A82ee2E5b9146dA7707B15465Af8D567095a",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x95b2015747AFBFAEC90A7a9A19B1729d94F0CDb6",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x8Ccd5c1fa5EEcB49Bd758bffE5072c95aE1f66b7",
+      "refaladdress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x792A0835769195864dA6f258319561EbBB97f8f1",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xB59717583D6401dB907E76A09026c6e586Af838c",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xa6873C84a40e9E7eC1eb85e6951b67C53640A22B",
+      "refaladdress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xDe3D156DC966b27Ab1AeA303317Fdd6A480B9D14",
+      "refaladdress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xa499d6e225b4c690584E75BB8Dfff06C16525824",
+      "refaladdress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xAa687ED5867c7a5C5F21d919F6956a19f28b7bC9",
+      "refaladdress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x2E9f14acBE3F36d04850ec63E2b7Cf534F7746f0",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xEeAbA6e8F88140229049eE909716571e7640f147",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x7C60e26181012ab65e0b7128820A100CF30CE2C3",
+      "refaladdress": "0x9050fA6408B82860CaB1D0Ecf89606a307f8e4aE",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x73738CE1eeB5b12EE4Fe0742C4dc6435090Fd6Af",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x693Ec52a03A0068204A819856028251759b5cFB1",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xA49eF9DC764AA9D5a13c1E1ceCa28f9AdBA181C0",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xd70030c0748fbB7644C796FBaB85Dde6F17F5F5A",
+      "refaladdress": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x73A172d1553bCD0e3e6F4975de17233d337e04a5",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xaee81e154c995De728f4Eece7e8175aF6537A9A8",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xd151f5337C7ab0d9Ca4a52DD704322Ed157d5F2f",
+      "refaladdress": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x6F6933d316D081EA1564A8D7c84E20bB76b78453",
+      "refaladdress": "0xDbeC720E23463e17733DfeE991667f6c23673D08",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x084d6538271671F3f867803B3F6fa744106A88ca",
+      "refaladdress": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x27B6D623C1E7E96a06603B3Ece9BB8497Eb3c765",
+      "refaladdress": "0x31FbcB82066550EaB95Da1D674eAa338917da7D2",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xcc32047F55E6EEE1Aa8bbB86AAa9aE3dD1Ab183a",
+      "refaladdress": "0x6C6B0F01B4243768336cAa8Bc14b19bAA22E8698",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x9ddEB92a3186Ff5293dE4E28642E0897ACd2946A",
+      "refaladdress": "0xB62dc9db6458fC1A45a85A5638B8d405eED67EC4",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0xe3aC92953196cbB5e0F7Da8e911BcFDe60dc0E16",
+      "refaladdress": "0xD492d6012BaD0A9Cfc4B83F9BE46CbaA25172f9c",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x8c57EdD53Af24eff90493a946e88056754D70AEf",
+      "refaladdress": "0xCb0dA3a9d285EB397417a303deB317Bdff025000",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x81Cb208cd36c7d0546575D496F5A12b95038dbbC",
+      "refaladdress": "0xa499d6e225b4c690584E75BB8Dfff06C16525824",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x7c52581505a415250548d56cb3e95f86B3Ef5336",
+      "refaladdress": "0xB59717583D6401dB907E76A09026c6e586Af838c",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x880Fa886Cb5e719b0F90F32e131f72C1779B3387",
+      "refaladdress": "0x95b2015747AFBFAEC90A7a9A19B1729d94F0CDb6",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x0Cc3093a4236b1C96EAE88f4bc41b0067a1748ec",
+      "refaladdress": "0x792A0835769195864dA6f258319561EbBB97f8f1",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x49c9cFe47Cbc37388D772e7B155031D2dF21c228",
+      "refaladdress": "0x21a5A82ee2E5b9146dA7707B15465Af8D567095a",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x2661e9739d858609fe830Ede427fA16d8b10F49d",
+      "refaladdress": "0xEeAbA6e8F88140229049eE909716571e7640f147",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0xE0392FFF48bAE2E97a7E8220E1bB2e88f0E319c2",
+      "refaladdress": "0xD492d6012BaD0A9Cfc4B83F9BE46CbaA25172f9c",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xEB213b0f7892a6C3fcb7f646bB61c1cc9A3a3980",
+      "refaladdress": "0xD492d6012BaD0A9Cfc4B83F9BE46CbaA25172f9c",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xB9f368EBc9be2d7CBfE48E194bd54ed07e2Ec5B8",
+      "refaladdress": "0x27B6D623C1E7E96a06603B3Ece9BB8497Eb3c765",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x55f06FdF0A703cF5A7Ef87D7B77c9d51D5520656",
+      "refaladdress": "0xcc32047F55E6EEE1Aa8bbB86AAa9aE3dD1Ab183a",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x4E66a6080C093c3B89256cb315Ca43a1939B2Cd0",
+      "refaladdress": "0x9ddEB92a3186Ff5293dE4E28642E0897ACd2946A",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x014878b2fB5fd18dda3b1Acd6932Ffb4498b72e4",
+      "refaladdress": "0x9ddEB92a3186Ff5293dE4E28642E0897ACd2946A",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xde295FF1430fB2F84F4dD3622dE029710Ac46Ec3",
+      "refaladdress": "0x9ddEB92a3186Ff5293dE4E28642E0897ACd2946A",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x0a43148129c14c950926d796cB86594C3DD877d3",
+      "refaladdress": "0xe3aC92953196cbB5e0F7Da8e911BcFDe60dc0E16",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x043952fF2249F28c461f775Bc68c9997b9cC27ae",
+      "refaladdress": "0xe3aC92953196cbB5e0F7Da8e911BcFDe60dc0E16",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xD25318c555DBA2895059772a1f68a95D9be86e75",
+      "refaladdress": "0xe3aC92953196cbB5e0F7Da8e911BcFDe60dc0E16",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x4b86cDF15Bd8406755d5A2ef4398E56E582B421d",
+      "refaladdress": "0x49c9cFe47Cbc37388D772e7B155031D2dF21c228",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xAA881EF70888C8d5545316B6520D36fD6059a669",
+      "refaladdress": "0x2661e9739d858609fe830Ede427fA16d8b10F49d",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x4438188f6923F0012686EBd3e3C5e78172B3e6d9",
+      "refaladdress": "0x2661e9739d858609fe830Ede427fA16d8b10F49d",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xfc2ba207b816E7c35A460ed970445335f6e0845A",
+      "refaladdress": "0xE0392FFF48bAE2E97a7E8220E1bB2e88f0E319c2",
+      "level": 2,
+      "amount": "60.0"
+    },
+    {
+      "walletaddress": "0x77e29B83be63eF4aA08fCc59B4EFb20BDC3faa63",
+      "refaladdress": "0x2661e9739d858609fe830Ede427fA16d8b10F49d",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xB50Cf37FEddAf50D509163621cD9F563BF998C58",
+      "refaladdress": "0x9ddEB92a3186Ff5293dE4E28642E0897ACd2946A",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0xF6228a554A48EA52427D6dD936c4038fca57BBe8",
+      "refaladdress": "0xfc2ba207b816E7c35A460ed970445335f6e0845A",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x2Cb5bEF40Fb162Ab3Da3677cB9b3235a57bc3c62",
+      "refaladdress": "0xfc2ba207b816E7c35A460ed970445335f6e0845A",
+      "level": 1,
+      "amount": "30.0"
+    },
+    {
+      "walletaddress": "0x313d0c27649e1b12c967304A2d51b04C5B997973",
+      "refaladdress": "0xfc2ba207b816E7c35A460ed970445335f6e0845A",
+      "level": 1,
+      "amount": "30.0"
+    }
+  ]
+}

@@ -1,0 +1,4548 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x50BB5f822E69130b95408EFE3E156b50c322a4D6",
+      "txHash": "0xfd842b06d38848031c80eb644c17bcee80129dc04b36c8e7a17f2d3f0b197875",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "61e801473381b672e75089decccf5e7d97bb5e59a48fac35c286dc642dd405cf": {
+      "address": "0x9f40a8B557CE056EcBc6FD8A48E4A8c2EF4bB899",
+      "txHash": "0xb8eda8e0002be7a9368acb18830712daf008825a653db3f4a972136533453bf7",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:40"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:41"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:42"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1774_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:62"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1780_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:63"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:64"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:65"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1785_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:67"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1780_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:68"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1780_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:69"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:70"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:71"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1785_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1774_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1780_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1785_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1774_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1780_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "9f13bd5f71e64c5b3b0aede55ae011e093f68a5b58b0e8ca306bfdef26fc8dbb": {
+      "address": "0xfdb87039a2f581c1D657051CDddcF15cc277AD21",
+      "txHash": "0x9b79a8f402d11d0116971abc03df32c648423a8fdb538a184ae2c633bafe359b",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1770",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:44"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:45"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:46"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1814_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:66"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1820_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:67"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:68"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:69"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1825_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:71"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1820_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1820_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:82"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:84"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:91"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:93"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:94"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:104"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:106"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:108"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1770": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1825_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1814_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1820_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1825_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1814_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1820_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "de8e04298736739ffff2ec2e3ca110caecaf6f9a0c55e1cbf3058d83a07c3466": {
+      "address": "0x28a69D4d57610d11ad93e8a9294Add0F0752bAB4",
+      "txHash": "0x964fbaf40f222e91deb8fd958bc0f24a5b9b29b38deddd599e596e897b37e8b3",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1789_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1800_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:88"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:89"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:96"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:97"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:100"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:110"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1800_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1789_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1800_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1789_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1795_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "47effea92f766b4217e8042b4f690482b88c58140f6f016c1006478dec5f82f2": {
+      "address": "0x4440e7e4f1f1ec14Fb16f4ACD50aD863414835ff",
+      "txHash": "0x1152bc18a92afd0f56e1f28bf3db280cd706cde6c7a46fccb3c752621d391935",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1789_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1800_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:88"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:89"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:96"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:97"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:100"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:110"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:121"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:124"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1800_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1789_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1800_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1789_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1795_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "e52513e4e44bc78b7b47f1f7a72748d75529bc9d3c835c17e29eed02495f83ff": {
+      "address": "0xC77c6F874d37fDe077579F0ab729eF2386AA7A46",
+      "txHash": "0xc611505fbd5a753196a8f0ecb412686443ff61ae99e535c8336b8667e1837e3d",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1789_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1800_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:88"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:89"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:96"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:97"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:100"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:110"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:121"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:124"
+          },
+          {
+            "label": "upgradeSavings",
+            "offset": 0,
+            "slot": "26",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:132"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1800_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1789_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1800_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1789_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1795_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "3aa9f9a109e2c4ee4598cb9b966cc2b1411d85e5a5385d78d0c85bb2c9915709": {
+      "address": "0x30A6728F389411e9DC09BBbd2dFc5194e4c68D07",
+      "txHash": "0xa01fc9fd140188bcf6a24e55f800ace180f7fad7f037935a394dbf680af7d9b2",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1789_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1800_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:88"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:89"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:96"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:97"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:100"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:110"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:121"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:124"
+          },
+          {
+            "label": "upgradeSavings",
+            "offset": 0,
+            "slot": "26",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:132"
+          },
+          {
+            "label": "cycleAdvance",
+            "offset": 0,
+            "slot": "27",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:140"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1800_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1789_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1800_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1789_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1795_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "596462cd654e73ae9d1c08c44089ef284889ff833cbc334aea26e0e8c4acf538": {
+      "address": "0x30C8C2C70664f8F828311098275D559b77ef4e2d",
+      "txHash": "0x13529e024f7c979c8cd6fd0a027d04dda926533bb189728fc67c92a165d084e5",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1789_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1800_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:88"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:89"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:96"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:97"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:100"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:110"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:121"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:124"
+          },
+          {
+            "label": "upgradeSavings",
+            "offset": 0,
+            "slot": "26",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:132"
+          },
+          {
+            "label": "cycleAdvance",
+            "offset": 0,
+            "slot": "27",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:140"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1800_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1789_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1800_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1789_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1795_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "0d1d6a718cd94b2cb1c363f44aad8b4cbf19cc6a19e1ecfe91911350ac3a9e60": {
+      "address": "0xa22C27B372EFe045edF06756819b46b163e74219",
+      "txHash": "0xd4e6ef0f4408c217205583a67ba884dc5165c8a61711bcaf0042b4c6adf510ef",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1789_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:72"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:73"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1800_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:78"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:88"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:89"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:96"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:97"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:100"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:110"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:121"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:124"
+          },
+          {
+            "label": "upgradeSavings",
+            "offset": 0,
+            "slot": "26",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:132"
+          },
+          {
+            "label": "cycleAdvance",
+            "offset": 0,
+            "slot": "27",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:140"
+          },
+          {
+            "label": "legacyUserId",
+            "offset": 0,
+            "slot": "28",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:21"
+          },
+          {
+            "label": "legacyIdAccount",
+            "offset": 0,
+            "slot": "29",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:22"
+          },
+          {
+            "label": "legacyIdentityCount",
+            "offset": 0,
+            "slot": "30",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:23"
+          },
+          {
+            "label": "legacyIdentityFinalized",
+            "offset": 0,
+            "slot": "31",
+            "type": "t_bool",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:24"
+          },
+          {
+            "label": "legacyGlobalIncome",
+            "offset": 0,
+            "slot": "32",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:26"
+          },
+          {
+            "label": "legacyGlobalIncomeTotal",
+            "offset": 0,
+            "slot": "33",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:27"
+          },
+          {
+            "label": "legacyGlobalIncomeFinalized",
+            "offset": 0,
+            "slot": "34",
+            "type": "t_bool",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:28"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1800_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1789_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1795_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1800_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1789_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1795_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "715b8be1013130710b44f83181872d40e5386c6082b43cfe7e58e82ee6fef265": {
+      "address": "0xFce58662eD824b5711a587CEbc76Cd083CC311bD",
+      "txHash": "0xe9b5171d29e16d2d303ac7aed1e893af7cb281227a603e8f11cdd9302b60f751",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1790_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:76"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1801_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:82"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:85"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:91"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:92"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:98"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:101"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:102"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:116"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:125"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:126"
+          },
+          {
+            "label": "upgradeSavings",
+            "offset": 0,
+            "slot": "26",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:134"
+          },
+          {
+            "label": "cycleAdvance",
+            "offset": 0,
+            "slot": "27",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:142"
+          },
+          {
+            "label": "legacyUserId",
+            "offset": 0,
+            "slot": "28",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:21"
+          },
+          {
+            "label": "legacyIdAccount",
+            "offset": 0,
+            "slot": "29",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:22"
+          },
+          {
+            "label": "legacyIdentityCount",
+            "offset": 0,
+            "slot": "30",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:23"
+          },
+          {
+            "label": "legacyIdentityFinalized",
+            "offset": 0,
+            "slot": "31",
+            "type": "t_bool",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:24"
+          },
+          {
+            "label": "legacyGlobalIncome",
+            "offset": 0,
+            "slot": "32",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:26"
+          },
+          {
+            "label": "legacyGlobalIncomeTotal",
+            "offset": 0,
+            "slot": "33",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:27"
+          },
+          {
+            "label": "legacyGlobalIncomeFinalized",
+            "offset": 0,
+            "slot": "34",
+            "type": "t_bool",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:28"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1801_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1790_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1801_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(Member)1790_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1796_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    },
+    "4334396fffa785f37176f3199d8e580fb3499a38ea466f5a979457f250940b86": {
+      "address": "0x04aA5c5dFd22dA75d4b42E77DF3BfA5bF1a40DBa",
+      "txHash": "0x8a2d4abaf9b9912bfb3fc4be09c8380d18f3e89fba368e8d6dad37d3b448e5ae",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "paymentToken",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_contract(IERC20Minimal)1737",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:50"
+          },
+          {
+            "label": "treasury",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:51"
+          },
+          {
+            "label": "bootstrapAccount",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:52"
+          },
+          {
+            "label": "members",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_struct(Member)1790_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:74"
+          },
+          {
+            "label": "_queues",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:75"
+          },
+          {
+            "label": "childrenFilled",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:76"
+          },
+          {
+            "label": "cycleGross",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:77"
+          },
+          {
+            "label": "globalMembers",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_mapping(t_address,t_struct(GlobalMember)1801_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:79"
+          },
+          {
+            "label": "_gpQueueA",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:80"
+          },
+          {
+            "label": "_gpQueueB",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:81"
+          },
+          {
+            "label": "gpFilledA",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:82"
+          },
+          {
+            "label": "gpFilledB",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint8))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:83"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:85"
+          },
+          {
+            "label": "activatedAmount",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:90"
+          },
+          {
+            "label": "wasMigrated",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:91"
+          },
+          {
+            "label": "migrationFinalized",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:92"
+          },
+          {
+            "label": "matrixParent",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_address))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:98"
+          },
+          {
+            "label": "_matrixChildren",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:99"
+          },
+          {
+            "label": "matrixIncome",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:101"
+          },
+          {
+            "label": "globalIncome",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:102"
+          },
+          {
+            "label": "legacyIncome",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:112"
+          },
+          {
+            "label": "legacyIncomeTotal",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:114"
+          },
+          {
+            "label": "legacyBackfillFinalized",
+            "offset": 0,
+            "slot": "22",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:116"
+          },
+          {
+            "label": "legacyGlobalLevel",
+            "offset": 0,
+            "slot": "23",
+            "type": "t_mapping(t_address,t_uint8)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:123"
+          },
+          {
+            "label": "legacyGlobalCount",
+            "offset": 0,
+            "slot": "24",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:125"
+          },
+          {
+            "label": "legacyGlobalFinalized",
+            "offset": 0,
+            "slot": "25",
+            "type": "t_bool",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:126"
+          },
+          {
+            "label": "upgradeSavings",
+            "offset": 0,
+            "slot": "26",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:134"
+          },
+          {
+            "label": "cycleAdvance",
+            "offset": 0,
+            "slot": "27",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_uint256))",
+            "contract": "UsdtBossEducational",
+            "src": "contracts/UsdtBossEducational.sol:142"
+          },
+          {
+            "label": "legacyUserId",
+            "offset": 0,
+            "slot": "28",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:21"
+          },
+          {
+            "label": "legacyIdAccount",
+            "offset": 0,
+            "slot": "29",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:22"
+          },
+          {
+            "label": "legacyIdentityCount",
+            "offset": 0,
+            "slot": "30",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:23"
+          },
+          {
+            "label": "legacyIdentityFinalized",
+            "offset": 0,
+            "slot": "31",
+            "type": "t_bool",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:24"
+          },
+          {
+            "label": "legacyGlobalIncome",
+            "offset": 0,
+            "slot": "32",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:26"
+          },
+          {
+            "label": "legacyGlobalIncomeTotal",
+            "offset": 0,
+            "slot": "33",
+            "type": "t_uint256",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:27"
+          },
+          {
+            "label": "legacyGlobalIncomeFinalized",
+            "offset": 0,
+            "slot": "34",
+            "type": "t_bool",
+            "contract": "UsdtBossEducationalV3",
+            "src": "contracts/UsdtBossEducationalV3.sol:28"
+          },
+          {
+            "label": "legacyGrowth",
+            "offset": 0,
+            "slot": "35",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_struct(LegacyGrowthRecord)4661_storage))",
+            "contract": "UsdtBossEducationalV5",
+            "src": "contracts/UsdtBossEducationalV5.sol:36"
+          },
+          {
+            "label": "legacyGrowthCount",
+            "offset": 0,
+            "slot": "36",
+            "type": "t_mapping(t_uint8,t_uint256)",
+            "contract": "UsdtBossEducationalV5",
+            "src": "contracts/UsdtBossEducationalV5.sol:37"
+          },
+          {
+            "label": "legacyGrowthFinalized",
+            "offset": 0,
+            "slot": "37",
+            "type": "t_mapping(t_uint8,t_bool)",
+            "contract": "UsdtBossEducationalV5",
+            "src": "contracts/UsdtBossEducationalV5.sol:38"
+          },
+          {
+            "label": "_legacyGrowthChildren",
+            "offset": 0,
+            "slot": "38",
+            "type": "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "UsdtBossEducationalV5",
+            "src": "contracts/UsdtBossEducationalV5.sol:39"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)220_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)13_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_contract(IERC20Minimal)1737": {
+            "label": "contract IERC20Minimal",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(GlobalMember)1801_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.GlobalMember)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(LegacyGrowthRecord)4661_storage)": {
+            "label": "mapping(address => struct UsdtBossEducationalV5.LegacyGrowthRecord)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(Member)1790_storage)": {
+            "label": "mapping(address => struct UsdtBossEducational.Member)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint8)": {
+            "label": "mapping(address => uint8)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_bool)": {
+            "label": "mapping(uint8 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_address))": {
+            "label": "mapping(uint8 => mapping(address => address))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(uint8 => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_struct(LegacyGrowthRecord)4661_storage))": {
+            "label": "mapping(uint8 => mapping(address => struct UsdtBossEducationalV5.LegacyGrowthRecord))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(uint8 => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_mapping(t_address,t_uint8))": {
+            "label": "mapping(uint8 => mapping(address => uint8))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_struct(SlotQueue)1796_storage)": {
+            "label": "mapping(uint8 => struct UsdtBossEducational.SlotQueue)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint8,t_uint256)": {
+            "label": "mapping(uint8 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(GlobalMember)1801_storage": {
+            "label": "struct UsdtBossEducational.GlobalMember",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "highestLevel",
+                "type": "t_uint8",
+                "offset": 1,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(LegacyGrowthRecord)4661_storage": {
+            "label": "struct UsdtBossEducationalV5.LegacyGrowthRecord",
+            "members": [
+              {
+                "label": "parent",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sourceId",
+                "type": "t_uint32",
+                "offset": 20,
+                "slot": "0"
+              },
+              {
+                "label": "generationId",
+                "type": "t_uint32",
+                "offset": 24,
+                "slot": "0"
+              },
+              {
+                "label": "position",
+                "type": "t_uint32",
+                "offset": 28,
+                "slot": "0"
+              },
+              {
+                "label": "level",
+                "type": "t_uint8",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "imported",
+                "type": "t_bool",
+                "offset": 1,
+                "slot": "1"
+              },
+              {
+                "label": "position1Income",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "position2Income",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(Member)1790_storage": {
+            "label": "struct UsdtBossEducational.Member",
+            "members": [
+              {
+                "label": "joined",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "sponsor",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "0"
+              },
+              {
+                "label": "directCount",
+                "type": "t_uint32",
+                "offset": 21,
+                "slot": "0"
+              },
+              {
+                "label": "highestSlot",
+                "type": "t_uint8",
+                "offset": 25,
+                "slot": "0"
+              },
+              {
+                "label": "withdrawable",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(SlotQueue)1796_storage": {
+            "label": "struct UsdtBossEducational.SlotQueue",
+            "members": [
+              {
+                "label": "cursor",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "accounts",
+                "type": "t_array(t_address)dyn_storage",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint32": {
+            "label": "uint32",
+            "numberOfBytes": "4"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

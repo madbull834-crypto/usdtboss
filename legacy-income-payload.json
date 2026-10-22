@@ -1,0 +1,242 @@
+[
+ {
+  "wallet": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+  "userid": "712674",
+  "usdt": "333.00",
+  "units6": 333000000
+ },
+ {
+  "wallet": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+  "userid": "120826",
+  "usdt": "210.00",
+  "units6": 210000000
+ },
+ {
+  "wallet": "0xB5d0fDE4a82B17D4a5731458e0bd43F2aebEb6eC",
+  "userid": "393944",
+  "usdt": "198.00",
+  "units6": 198000000
+ },
+ {
+  "wallet": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+  "userid": "795406",
+  "usdt": "171.00",
+  "units6": 171000000
+ },
+ {
+  "wallet": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+  "userid": "397364",
+  "usdt": "165.00",
+  "units6": 165000000
+ },
+ {
+  "wallet": "0xb71ef909500A60dddcE6A5dADCC096a27B1Cf759",
+  "userid": "972735",
+  "usdt": "165.00",
+  "units6": 165000000
+ },
+ {
+  "wallet": "0x0F548A349aCef638d0c89481dB1BC4992ef8563E",
+  "userid": "498732",
+  "usdt": "144.00",
+  "units6": 144000000
+ },
+ {
+  "wallet": "0xC3EE6d4fD646786BB1C6A514f2411B17972aBb48",
+  "userid": "788525",
+  "usdt": "141.00",
+  "units6": 141000000
+ },
+ {
+  "wallet": "0x074df8CA5db9bBf513E86757Bdd5a0dbEB13bf57",
+  "userid": "934372",
+  "usdt": "90.00",
+  "units6": 90000000
+ },
+ {
+  "wallet": "0x9ddEB92a3186Ff5293dE4E28642E0897ACd2946A",
+  "userid": "507635",
+  "usdt": "57.00",
+  "units6": 57000000
+ },
+ {
+  "wallet": "0xaF9168210B45EB0F660dEF7D08cA0BA7E2272BEf",
+  "userid": "139875",
+  "usdt": "57.00",
+  "units6": 57000000
+ },
+ {
+  "wallet": "0x4de3bdF7fAE0E6b65080d03D615e389109Beaf0b",
+  "userid": "125340",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xD645782050a5fb636312dcA985b5eB54912E0518",
+  "userid": "437345",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xc1c0e6ECf8f540e0e746eB3810272F2bA0d22235",
+  "userid": "590483",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xE74b494C3AD773C74ddD1bdd2f8fee485718fc84",
+  "userid": "308422",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x31FbcB82066550EaB95Da1D674eAa338917da7D2",
+  "userid": "752821",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x27B6D623C1E7E96a06603B3Ece9BB8497Eb3c765",
+  "userid": "672006",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x4Cc2F0d596ccEc4c064d449E97280958edEbf832",
+  "userid": "732177",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x82b3Bfd1c8876dD58a3a8A60E5C4361E54DE0072",
+  "userid": "114734",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x6C6B0F01B4243768336cAa8Bc14b19bAA22E8698",
+  "userid": "582472",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xcc32047F55E6EEE1Aa8bbB86AAa9aE3dD1Ab183a",
+  "userid": "549997",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x8c786602190559C8451d9824E933e3F1091969FD",
+  "userid": "196850",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xB62dc9db6458fC1A45a85A5638B8d405eED67EC4",
+  "userid": "482904",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x3476BA0F301301C6E430C7d51742Dc326ecF9310",
+  "userid": "668160",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xD492d6012BaD0A9Cfc4B83F9BE46CbaA25172f9c",
+  "userid": "948500",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xe3aC92953196cbB5e0F7Da8e911BcFDe60dc0E16",
+  "userid": "741728",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xCb0dA3a9d285EB397417a303deB317Bdff025000",
+  "userid": "194318",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xa499d6e225b4c690584E75BB8Dfff06C16525824",
+  "userid": "227659",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xB59717583D6401dB907E76A09026c6e586Af838c",
+  "userid": "261832",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x8465efFfdaC1Cb29973458D4a09d5b2A8566A8FE",
+  "userid": "632470",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x95b2015747AFBFAEC90A7a9A19B1729d94F0CDb6",
+  "userid": "371052",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x792A0835769195864dA6f258319561EbBB97f8f1",
+  "userid": "330046",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x21a5A82ee2E5b9146dA7707B15465Af8D567095a",
+  "userid": "660911",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x49c9cFe47Cbc37388D772e7B155031D2dF21c228",
+  "userid": "837678",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xEeAbA6e8F88140229049eE909716571e7640f147",
+  "userid": "162691",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x2661e9739d858609fe830Ede427fA16d8b10F49d",
+  "userid": "157099",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0x9050fA6408B82860CaB1D0Ecf89606a307f8e4aE",
+  "userid": "292217",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xE0392FFF48bAE2E97a7E8220E1bB2e88f0E319c2",
+  "userid": "608368",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xfc2ba207b816E7c35A460ed970445335f6e0845A",
+  "userid": "312181",
+  "usdt": "30.00",
+  "units6": 30000000
+ },
+ {
+  "wallet": "0xDbeC720E23463e17733DfeE991667f6c23673D08",
+  "userid": "285813",
+  "usdt": "30.00",
+  "units6": 30000000
+ }
+]

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+artifacts/
+cache/
+typechain-types/
+coverage/
+test-results/
+*.zip
+.env
+.env.local
+.env.*.local
+frontend/.env.local
+frontend/.env.*.local
+*.tsbuildinfo
+.DS_Store

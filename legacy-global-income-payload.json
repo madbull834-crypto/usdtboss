@@ -1,0 +1,51 @@
+[
+  {
+    "wallet": "0x676c28c70b27E64C7b72203821f0db66BF022d65",
+    "userid": "120826",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  },
+  {
+    "wallet": "0x8Dd7bB8C99372B6Ce274a2cd1C9b9EABb4C79d18",
+    "userid": "712674",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  },
+  {
+    "wallet": "0xe2054Ed8e010618501838d6116BfdCDC4955CfdA",
+    "userid": "397364",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  },
+  {
+    "wallet": "0x8f43A3b2cF8eE64Cb1A2F81E37DeC53c231cbE9D",
+    "userid": "795406",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  },
+  {
+    "wallet": "0x3476BA0F301301C6E430C7d51742Dc326ecF9310",
+    "userid": "668160",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  },
+  {
+    "wallet": "0x4de3bdF7fAE0E6b65080d03D615e389109Beaf0b",
+    "userid": "125340",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  },
+  {
+    "wallet": "0x5224BD34CF13797513bF346478AdA8AbC9A80626",
+    "userid": "976584",
+    "usdt": "72.000000",
+    "units6": 72000000,
+    "source": "completed level-1 Global Pool 2x5 cycle"
+  }
+]
