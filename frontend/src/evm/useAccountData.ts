@@ -7,15 +7,27 @@ export function useAccountData() {
  const [wallet,setWallet] = useState(evmProvider()?.publicKey?.toString() ?? "");
  useEffect(()=>{
   let live=true;
-  const refreshSummary=()=>getWalletDashboardSummary().then(result=>{if(live)setSummary(result);}).catch(e=>{
+  let fullTimer:number|undefined;
+  const refreshSummary=()=>getWalletDashboardSummary().then(result=>{if(live){setSummary(result);setError("");}}).catch(e=>{
    if(live)setError(e instanceof Error?e.message:String(e));
   });
   const refresh=()=>getDashboardData().then(result=>{if(live){setData(result);setError("");}}).catch(e=>{if(live)setError(e instanceof Error?e.message:String(e));});
-  void refreshSummary().finally(()=>void refresh());
-  const timer=window.setInterval(()=>{void refreshSummary().finally(()=>void refresh());},10000);
-  const updated=()=>{setWallet(evmProvider()?.publicKey?.toString() ?? "");void refreshSummary().finally(()=>void refresh());};
+  const scheduleFullRefresh=()=>{
+   if(fullTimer!==undefined)window.clearTimeout(fullTimer);
+   // Give the small wallet-only read first access to rate-limited public RPCs.
+   fullTimer=window.setTimeout(()=>void refresh(),750);
+  };
+  void refreshSummary().finally(scheduleFullRefresh);
+  const summaryTimer=window.setInterval(()=>void refreshSummary(),15000);
+  const fullRefreshTimer=window.setInterval(()=>void refresh(),60000);
+  const updated=()=>{
+   setWallet(evmProvider()?.publicKey?.toString() ?? "");
+   setSummary(null);
+   setData(null);
+   void refreshSummary().finally(scheduleFullRefresh);
+  };
   window.addEventListener("boss:updated",updated);
-  return ()=>{live=false;clearInterval(timer);window.removeEventListener("boss:updated",updated);};
+  return ()=>{live=false;if(fullTimer!==undefined)clearTimeout(fullTimer);clearInterval(summaryTimer);clearInterval(fullRefreshTimer);window.removeEventListener("boss:updated",updated);};
  },[]);
  // The full snapshot assigns the public queue-order display ID. Prefer that
  // user once loaded so the fast state summary cannot replace it with the

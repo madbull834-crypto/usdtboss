@@ -1,36 +1,19 @@
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
-import { PublicKey } from "../../evm/address";
+import { useEffect, useState, type CSSProperties } from "react";
 import { useAccountData } from "../../evm/useAccountData";
 import PageMeta from "../../components/common/PageMeta";
 import ContractActions from "../../components/soltrust/ContractActions";
 import GlobalAutopoolPlan from "../../components/soltrust/GlobalAutopoolPlan";
-import {
-  connection,
-  getAllPaymentEvents,
-  getSolTrustUserAccount,
-  evmProvider,
-  type SolTrustPaymentEvent,
-  type SolTrustUserAccount,
-} from "../../evm/client";
 import { formatSol } from "../../evm/plan";
 
 export default function Home() {
   const account = useAccountData();
-  const rpc = useMemo(() => connection(), []);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [wallet, setWallet] = useState<PublicKey | null>(null);
-  const [currentUser, setCurrentUser] = useState<SolTrustUserAccount | null>(null);
   const [referrer, setReferrer] = useState("");
   const [copied, setCopied] = useState(false);
-  const [paymentEvents, setPaymentEvents] = useState<SolTrustPaymentEvent[]>([]);
+  const currentUser = account.user;
+  const paymentEvents = (account.data?.payments ?? []).filter(event=>event.recipient===account.wallet);
 
   const isMobile = windowWidth < 768;
-
-  useEffect(() => {
-    setCurrentUser(account.user);
-    setPaymentEvents((account.data?.payments ?? []).filter(e=>e.recipient===account.wallet));
-    setWallet(account.wallet ? new PublicKey(account.wallet) : null);
-  },[account.data,account.wallet,account.user]);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -52,55 +35,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const phantom = evmProvider();
-
-    if (phantom?.publicKey) {
-      setWallet(new PublicKey(phantom.publicKey.toString()));
-    }
-
     const inviter = new URLSearchParams(window.location.search).get("ref");
     setReferrer(inviter?.trim() ?? "");
   }, []);
 
-  useEffect(() => {
-    let active = true;
-
-    if (!wallet) {
-      setCurrentUser(null);
-      setPaymentEvents([]);
-      return () => {
-        active = false;
-      };
-    }
-
-    void getSolTrustUserAccount(rpc, wallet)
-      .then((user) => {
-        if (active) setCurrentUser(user);
-      })
-      .catch(() => {
-        if (active) setCurrentUser(null);
-      });
-
-    void getAllPaymentEvents(rpc)
-      .then((all) => {
-        if (active) {
-          setPaymentEvents(
-            all.filter((event) => event.recipient === wallet.toBase58())
-          );
-        }
-      })
-      .catch(() => {
-        if (active) setPaymentEvents([]);
-      });
-
-    return () => {
-      active = false;
-    };
-  }, [rpc, wallet]);
-
   // A user's referral link must always belong to the wallet that is connected
   // now. Never copy the root account, an incoming referral, or a stale wallet.
-  const connectedWallet = account.wallet || wallet?.toBase58() || "";
+  const connectedWallet = account.wallet;
   const inviteLink = connectedWallet
     ? `${window.location.origin}/register?ref=${encodeURIComponent(connectedWallet)}`
     : "";
@@ -150,6 +91,11 @@ export default function Home() {
     ? onChainIncome.matrix + onChainIncome.global
     : Math.max(liveWorkingIncome + liveNonWorkingIncome, available);
   const totalIncome = currentIncome + previousPlatformIncome;
+  // Upgrade reserves buy the next slot inside the contract. They are useful
+  // account activity, but are deliberately not included in wallet income.
+  const upgradeUsed = account.data && "upgradeUsed" in account.data
+    ? account.data.upgradeUsed
+    : null;
 
   const levelHistory = [30, 60, 120, 240, 480, 960, 1920, 3840, 7680, 15360, 30720, 61440];
 
@@ -289,15 +235,13 @@ export default function Home() {
         </div>
 
         {/* Four summary fields */}
-        <ContractActions />
+        <ContractActions account={account} />
         <div
           style={{
             display: "grid",
             gridTemplateColumns: isMobile
               ? "1fr"
-              : previousPlatformIncome > 0
-                ? "repeat(5, minmax(0, 1fr))"
-                : "repeat(4, minmax(0, 1fr))",
+              : "repeat(auto-fit, minmax(170px, 1fr))",
             gap: isMobile ? "10px" : "18px",
             marginBottom: isMobile ? "26px" : "32px",
           }}
@@ -312,6 +256,11 @@ export default function Home() {
           />
           <SummaryCard title="WORKING INCOME" value={historyError ? "—" : formatSol(workingIncome)} />
           <SummaryCard title="NON-WORKING INCOME" value={historyError ? "—" : formatSol(nonWorkingIncome)} />
+          <SummaryCard
+            title="UPGRADE TRIGGERED"
+            value={upgradeUsed === null ? "—" : formatSol(upgradeUsed)}
+            note="Reserved for activated slots · not wallet income"
+          />
           {previousPlatformIncome > 0 && (
             <SummaryCard title="PREVIOUS PLATFORM" value={formatSol(previousPlatformIncome)} />
           )}

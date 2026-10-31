@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { CHAIN_ID, DEFAULT_REFERRER, evmProvider, getWalletBalances, joinGlobalPoolEvm, mintTestTokens, withdrawEvm } from "../../evm/client";
-import { useAccountData } from "../../evm/useAccountData";
+import type { useAccountData } from "../../evm/useAccountData";
 import MobileWalletLinks from "../auth/MobileWalletLinks";
 
 const button = "rounded-lg border border-[#1595A1] bg-[#00505C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#007681] disabled:opacity-50";
-export default function ContractActions() {
- const account=useAccountData();
+export default function ContractActions({account}:{account:ReturnType<typeof useAccountData>}) {
  const [balances,setBalances]=useState<Awaited<ReturnType<typeof getWalletBalances>> | null>(null);
  const [message,setMessage]=useState("");
  const [busy,setBusy]=useState(false);
@@ -15,10 +14,10 @@ export default function ContractActions() {
  );
  useEffect(()=>{
   let live=true;
-  const refresh=()=>{if(evmProvider()?.publicKey)void getWalletBalances().then(v=>{if(live)setBalances(v);}).catch(e=>{if(live)setMessage(e.message);});else setBalances(null);};
-  refresh();const timer=setInterval(refresh,10000);window.addEventListener("boss:updated",refresh);
+  const refresh=()=>{if(evmProvider()?.publicKey)void getWalletBalances(account.data?.poolJoined ? account.data.poolLevel : 0).then(v=>{if(live)setBalances(v);}).catch(e=>{if(live)setMessage(e.message);});else setBalances(null);};
+  refresh();const timer=setInterval(refresh,30000);window.addEventListener("boss:updated",refresh);
   return()=>{live=false;clearInterval(timer);window.removeEventListener("boss:updated",refresh);};
- },[]);
+ },[account.data?.poolJoined,account.data?.poolLevel]);
  useEffect(()=>{
   if(!sponsor.trim()) setSponsor(account.user?.referrer || DEFAULT_REFERRER.toBase58());
  },[account.user,sponsor]);

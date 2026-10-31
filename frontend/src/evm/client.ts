@@ -23,6 +23,7 @@ const ABI = [
  "function globalQueueLengthA(uint8) view returns(uint256)",
  "function globalPoolEntry(uint8) view returns(uint256)",
  "function activatedAmount(address) view returns(uint256)",
+ "function upgradeSavings(address) view returns(uint256)",
  "function wasMigrated(address) view returns(bool)",
  "function migrationFinalized() view returns(bool)",
  "function matrixChildren(uint8,address) view returns(address[])",
@@ -66,7 +67,9 @@ let connecting: Promise<{publicKey: PublicKey}> | undefined;
 let writing = false;
 let snapshotCache: {expires:number; promise:ReturnType<typeof loadSnapshot>} | undefined;
 let walletSummaryCache: {wallet:string;expires:number;promise:Promise<WalletDashboardSummary>} | undefined;
+let contractCache: Promise<Contract> | undefined;
 let paymentDecimals = 6;
+let paymentTokenAddress = ZeroAddress;
 const unit = (amount:bigint) => Number(formatUnits(amount,paymentDecimals));
 
 // Public display IDs follow the immutable Slot-1 queue order. Keeping this
@@ -179,18 +182,29 @@ function userView(wallet:string,member:{sponsor:string;directCount:bigint;highes
  };
 }
 
-async function contract() {
- if (PROGRAM_ID.toString() === ZeroAddress) throw new Error("Set VITE_BOSS_ADDRESS to the deployed EVM contract.");
- if (Number((await rpc.getNetwork()).chainId) !== CHAIN_ID) throw new Error("Configured RPC is on the wrong chain.");
- if (await rpc.getCode(PROGRAM_ID.toString()) === "0x") throw new Error("The EVM contract is not deployed at the configured address.");
- const c=new Contract(PROGRAM_ID.toString(),ABI,rpc);
- const token=new Contract(await c.paymentToken(),TOKEN_ABI,rpc);
- const decimals=Number(await token.decimals());
- if(decimals!==6 && decimals!==18) throw new Error("The configured payment token has unsupported decimals.");
- const tokenUnit=await c.paymentTokenUnit().catch(()=>10n**BigInt(decimals));
- if(tokenUnit!==10n**BigInt(decimals)) throw new Error("Contract and payment-token units do not match.");
- paymentDecimals=decimals;
- return c;
+function contract() {
+ if(!contractCache) {
+  const pending=(async()=>{
+   if (PROGRAM_ID.toString() === ZeroAddress) throw new Error("Set VITE_BOSS_ADDRESS to the deployed EVM contract.");
+   if (Number((await rpc.getNetwork()).chainId) !== CHAIN_ID) throw new Error("Configured RPC is on the wrong chain.");
+   if (await rpc.getCode(PROGRAM_ID.toString()) === "0x") throw new Error("The EVM contract is not deployed at the configured address.");
+   const c=new Contract(PROGRAM_ID.toString(),ABI,rpc);
+   const tokenAddress=await c.paymentToken() as string;
+   const token=new Contract(tokenAddress,TOKEN_ABI,rpc);
+   const decimals=Number(await token.decimals());
+   if(decimals!==6 && decimals!==18) throw new Error("The configured payment token has unsupported decimals.");
+   const tokenUnit=await c.paymentTokenUnit().catch(()=>10n**BigInt(decimals));
+   if(tokenUnit!==10n**BigInt(decimals)) throw new Error("Contract and payment-token units do not match.");
+   paymentDecimals=decimals;
+   paymentTokenAddress=tokenAddress;
+   return c;
+  })();
+  // These checks only validate immutable deployment configuration. Reuse the
+  // result for every read, but allow a transient RPC failure to retry later.
+  const cached=pending.catch(error=>{if(contractCache===cached)contractCache=undefined;throw error;});
+  contractCache=cached;
+ }
+ return contractCache;
 }
 export async function initializeEvm() {
  try {
@@ -500,11 +514,16 @@ async function loadSnapshot() {
       ? unit(e.args.credited) : name==="Joined" ? 30 : 20;
    return {wallet,kind:name,hash:e.transactionHash,block:e.blockNumber,index:e.index,amount};
   });
- return {c,users,payments,placements:placed,totalMembers:users.length,totalPool:Number(poolSize),legacyPool,history,historyError:logResult.error};
+ const upgradeReservedByWallet=new Map<string,number>();
+ for(const event of cycles) {
+  const wallet=(event.args.member as string).toLowerCase();
+  upgradeReservedByWallet.set(wallet,(upgradeReservedByWallet.get(wallet) ?? 0)+unit(event.args.upgradeReserved));
+ }
+ return {c,users,payments,placements:placed,totalMembers:users.length,totalPool:Number(poolSize),legacyPool,history,historyError:logResult.error,upgradeReservedByWallet};
 }
 function snapshot() {
  if(!snapshotCache || Date.now()>snapshotCache.expires) {
-  const promise=loadSnapshot().then(result=>{if(snapshotCache?.promise===promise)snapshotCache.expires=Date.now()+5000;return result;}).catch(e=>{if(snapshotCache?.promise===promise)snapshotCache=undefined;throw e;});
+  const promise=loadSnapshot().then(result=>{if(snapshotCache?.promise===promise)snapshotCache.expires=Date.now()+30000;return result;}).catch(e=>{if(snapshotCache?.promise===promise)snapshotCache=undefined;throw e;});
   snapshotCache={expires:Infinity,promise};
  }
  return snapshotCache.promise;
@@ -721,11 +740,11 @@ export async function getRegistrationReadiness(sponsor?:string):Promise<Registra
 export async function joinGlobalPoolEvm(sponsor:string,onStatus:(s:string)=>void=()=>{}) {return write("joinGlobalPool",sponsor,onStatus);}
 export async function withdrawEvm(onStatus:(s:string)=>void=()=>{}) {return write("withdraw","",onStatus);}
 export async function getDashboardData() {
- const {c,users,payments,placements,totalMembers,totalPool,legacyPool,history,historyError}=await snapshot();
+ const {c,users,payments,placements,totalMembers,totalPool,legacyPool,history,historyError,upgradeReservedByWallet}=await snapshot();
  const displayPlacements=[...placements,...deriveLegacyReferralPlacements(users)];
  const wallet=connected?.toString();
- if(!wallet) return {users,payments,placements:displayPlacements,history:[],user:null,poolLevel:0,legacyPoolLevel:0,poolJoined:false,totalMembers,totalPool,legacyPool,available:0,income:null,legacyIncome:0,legacyGlobalIncome:0,legacyGrowthTrees:[] as LegacyGrowthView[],historyError};
- const [member,pool,income,legacy,legacyLevel,legacyGlobal,legacyGrowthTrees] = await Promise.all([c.members(wallet),c.globalMembers(wallet),
+ if(!wallet) return {users,payments,placements:displayPlacements,history:[],user:null,poolLevel:0,legacyPoolLevel:0,poolJoined:false,totalMembers,totalPool,legacyPool,available:0,income:null,legacyIncome:0,legacyGlobalIncome:0,legacyGrowthTrees:[] as LegacyGrowthView[],upgradeUsed:null,historyError};
+ const [member,pool,income,legacy,legacyLevel,legacyGlobal,legacyGrowthTrees,savedUpgradeReserve] = await Promise.all([c.members(wallet),c.globalMembers(wallet),
   // Lifetime income counters are appended storage: they exist from the
   // sponsor-placement upgrade onward and stay at zero for income credited
   // before it. Report an all-zero reading as absent so callers fall back to
@@ -739,10 +758,16 @@ export async function getDashboardData() {
   // Imported Global Pool standing is separate from live enrolment, but it is
   // still part of this member's previous-platform record and must be shown.
   c.legacyGlobalLevel(wallet).then((v:bigint)=>Number(v),()=>0),
-  c.legacyGlobalIncome(wallet).then((v:bigint)=>unit(v),()=>0),loadLegacyGrowth(c,wallet)]);
+  c.legacyGlobalIncome(wallet).then((v:bigint)=>unit(v),()=>0),loadLegacyGrowth(c,wallet),
+  c.upgradeSavings(wallet).then((v:bigint)=>unit(v),()=>0)]);
  const foundUser=users.find(u=>u.wallet===wallet) ?? null;
  const user=foundUser;
- return {users,payments,placements:displayPlacements,history:history.filter(e=>e.wallet===wallet),user,poolLevel:Number(pool.highestLevel),legacyPoolLevel:legacyLevel,poolJoined:Boolean(pool.joined),totalMembers,totalPool,legacyPool,available:unit(member.withdrawable),income,legacyIncome:legacy,legacyGlobalIncome:legacyGlobal,legacyGrowthTrees,historyError};
+ // CycleCompleted records every amount reserved toward a later slot. The
+ // portion still held in upgradeSavings has not activated a slot yet, so keep
+ // it out of "Used for Upgrade" until the contract actually consumes it.
+ const totalUpgradeReserved=upgradeReservedByWallet.get(wallet.toLowerCase()) ?? 0;
+ const upgradeUsed=historyError ? null : Math.max(0,totalUpgradeReserved-savedUpgradeReserve);
+ return {users,payments,placements:displayPlacements,history:history.filter(e=>e.wallet===wallet),user,poolLevel:Number(pool.highestLevel),legacyPoolLevel:legacyLevel,poolJoined:Boolean(pool.joined),totalMembers,totalPool,legacyPool,available:unit(member.withdrawable),income,legacyIncome:legacy,legacyGlobalIncome:legacyGlobal,legacyGrowthTrees,upgradeUsed,historyError};
 }
 
 // Fast, state-only dashboard path. It intentionally avoids event history and
@@ -772,30 +797,29 @@ export function getWalletDashboardSummary():Promise<WalletDashboardSummary|null>
  if(!wallet) return Promise.resolve(null);
  if(!walletSummaryCache || walletSummaryCache.wallet!==wallet || Date.now()>walletSummaryCache.expires) {
   const promise=loadWalletDashboardSummary(wallet).then(result=>{
-   if(walletSummaryCache?.promise===promise)walletSummaryCache.expires=Date.now()+5000;
+   if(walletSummaryCache?.promise===promise)walletSummaryCache.expires=Date.now()+15000;
    return result;
   }).catch(e=>{if(walletSummaryCache?.promise===promise)walletSummaryCache=undefined;throw e;});
   walletSummaryCache={wallet,expires:Infinity,promise};
  }
  return walletSummaryCache.promise;
 }
-export async function getWalletBalances() {
+export async function getWalletBalances(poolLevel=0) {
  const address=connected?.toString(); if(!address) throw new Error("Connect your wallet first.");
  const c=await contract();
- const tokenAddress=await c.paymentToken() as string;
- const token=new Contract(tokenAddress,TOKEN_ABI,rpc);
- const [decimals,balance,gas,levels]=await Promise.all([
-  token.decimals(),token.balanceOf(address),rpc.getBalance(address),
-  Promise.all(Array.from({length:6},async(_,i)=>({level:i+1,a:Number(await c.gpFilledA(i+1,address)),b:Number(await c.gpFilledB(i+1,address))})))
+ const token=new Contract(paymentTokenAddress,TOKEN_ABI,rpc);
+ const [balance,gas,levels]=await Promise.all([
+  token.balanceOf(address),rpc.getBalance(address),
+  Promise.all(Array.from({length:Math.max(0,Math.min(6,poolLevel))},async(_,i)=>({level:i+1,a:Number(await c.gpFilledA(i+1,address)),b:Number(await c.gpFilledB(i+1,address))})))
  ]);
- return {tokenAddress,tokenBalance:formatUnits(balance,Number(decimals)),gasBalance:formatUnits(gas,18),levels};
+ return {tokenAddress:paymentTokenAddress,tokenBalance:formatUnits(balance,paymentDecimals),gasBalance:formatUnits(gas,18),levels};
 }
 
 export type GlobalPoolLevelProgress = {level:number;growthTree1Filled:number;growthTree2Filled:number};
-export async function getGlobalPoolLevelProgress(wallet:string):Promise<GlobalPoolLevelProgress[]> {
+export async function getGlobalPoolLevelProgress(wallet:string,maxLevel=6):Promise<GlobalPoolLevelProgress[]> {
  const account=getAddress(wallet);
  const c=await contract();
- return Promise.all(Array.from({length:6},async(_,index)=>{
+ return Promise.all(Array.from({length:Math.max(0,Math.min(6,maxLevel))},async(_,index)=>{
   const level=index+1;
   const [growthTree1Filled,growthTree2Filled]=await Promise.all([
    c.gpFilledA(level,account),c.gpFilledB(level,account)

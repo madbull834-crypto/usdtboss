@@ -24,12 +24,12 @@ export default function GlobalAutopoolPlan({ wallet, poolJoined, poolLevel, lega
   useEffect(() => {
     let live = true;
     const refresh = () => {
-      if (!wallet) {
+      if (!wallet || !poolJoined || poolLevel < 1) {
         setProgress([]);
         setError("");
         return;
       }
-      void getGlobalPoolLevelProgress(wallet).then(result => {
+      void getGlobalPoolLevelProgress(wallet, poolLevel).then(result => {
         if (live) { setProgress(result); setError(""); }
       }).catch(reason => {
         if (live) setError(reason instanceof Error ? reason.message : String(reason));
@@ -43,7 +43,7 @@ export default function GlobalAutopoolPlan({ wallet, poolJoined, poolLevel, lega
       window.clearInterval(timer);
       window.removeEventListener("boss:updated", refresh);
     };
-  }, [wallet]);
+  }, [wallet, poolJoined, poolLevel]);
 
   return (
     <section className="mb-10 overflow-hidden rounded-2xl border border-[#1595A1] bg-[#071110] text-white shadow-[0_12px_38px_rgba(0,141,255,.14)]">
