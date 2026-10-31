@@ -40,16 +40,18 @@ export function useAccountData() {
   : data,[data,summary,user]);
  const users=data?.users ?? [];
  const placements=data?.placements ?? [];
+ const addressKey=(address:string)=>address.toLowerCase();
  // Legacy members select the referral-derived topology; new members select
  // confirmed contract topology. These sources must never be mixed.
  const matrixParentOf=(memberWallet:string)=>matrixPlacementOf(placements,memberWallet,1);
- const directs=users.filter(u=>u.referrer===wallet);
+ const walletKey=addressKey(wallet);
+ const directs=users.filter(u=>addressKey(u.referrer)===walletKey && addressKey(u.wallet)!==walletKey);
  const descendants: {user:typeof users[number];depth:number}[]=[];
- const seen=new Set([wallet]);let parents=[wallet];
- for(let depth=1;depth<=12 && parents.length;depth++){
-  const children=users.filter(u=>parents.includes(u.referrer) && !seen.has(u.wallet));
-  children.forEach(user=>{seen.add(user.wallet);descendants.push({user,depth});});
-  parents=children.map(u=>u.wallet);
+ const seen=new Set([walletKey]);let parents=new Set([walletKey]);
+ for(let depth=1;depth<=12 && parents.size;depth++){
+  const children=users.filter(u=>parents.has(addressKey(u.referrer)) && !seen.has(addressKey(u.wallet)));
+  children.forEach(user=>{seen.add(addressKey(user.wallet));descendants.push({user,depth});});
+  parents=new Set(children.map(u=>addressKey(u.wallet)));
  }
- return {data:effectiveData,error,wallet,user,users,directs,descendants,placements,matrixParentOf};
+ return {data:effectiveData,error,wallet,user,users,directs,descendants,placements,matrixParentOf,teamLoaded:data!==null};
 }

@@ -10,9 +10,9 @@ export default function DirectTeam() {
     totalPackage:formatSol(30 * (2 ** member.currentSlot-1)),status:"Active",
     joinDate:member.registeredAt ? new Date(Number(member.registeredAt)*1000).toISOString().slice(0,10) : "—",
     activeDate:member.registeredAt ? new Date(Number(member.registeredAt)*1000).toISOString().slice(0,10) : "—",
-    totalTeam:String(users.filter(u=>u.referrer===member.wallet).length)
+    totalTeam:String(users.filter(u=>u.referrer.toLowerCase()===member.wallet.toLowerCase()).length)
   }));
-  const summaryStats={userId:user?.userId.toString() ?? "—",directTeam:String(directs.length),referralCount:String(user?.directReferralCount ?? 0),currentSlot:String(user?.currentSlot ?? 0)};
+  const summaryStats={userId:user?.userId.toString() ?? "—",directTeam:String(Math.max(user?.directReferralCount ?? 0,directs.length)),referralCount:String(user?.directReferralCount ?? 0),currentSlot:String(user?.currentSlot ?? 0)};
   // Navigation items
   const navItems = [
     "Genealogy",

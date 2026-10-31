@@ -381,12 +381,12 @@ export default function Home() {
             />
             <BusinessRow
               label="Direct Team"
-              value={String(account.directs.length)}
+              value={String(Math.max(account.user?.directReferralCount ?? 0, account.directs.length))}
               isMobile={isMobile}
             />
             <BusinessRow
               label="Total Team"
-              value={String(account.descendants.length)}
+              value={account.teamLoaded ? String(account.descendants.length) : "Loading…"}
               isMobile={isMobile}
             />
             <BusinessRow

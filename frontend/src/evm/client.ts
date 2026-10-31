@@ -533,7 +533,10 @@ export async function getAllPaymentEvents(_rpc:JsonRpcProvider) {return (await s
 export async function getSolTrustUserAccount(_rpc:JsonRpcProvider,wallet:PublicKey) {
  return (await snapshot()).users.find(u=>u.wallet===wallet.toString()) ?? null;
 }
-export function getDirectReferralUsers(users:SolTrustUserAccount[],wallet:string) {return users.filter(u=>u.referrer===wallet && u.wallet!==wallet);}
+export function getDirectReferralUsers(users:SolTrustUserAccount[],wallet:string) {
+ const key=wallet.toLowerCase();
+ return users.filter(u=>u.referrer.toLowerCase()===key && u.wallet.toLowerCase()!==key);
+}
 export function formatUserOrdinal(id:bigint) {return "User "+id.toString();}
 export function maxRecyclesForSlot(_slot:number) {return 0;}
 export async function getMatrixPosition(_rpc:JsonRpcProvider,_wallet:PublicKey,_slot=1,_cycle=0):Promise<SolTrustMatrixPosition|null> {return null;}

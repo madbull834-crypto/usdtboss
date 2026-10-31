@@ -3,6 +3,7 @@ import { ZeroAddress } from "ethers";
 import {
   displayUserIdForQueueIndex,
   deriveLegacyReferralPlacements,
+  getDirectReferralUsers,
   matrixPlacementsForWallet,
   type SolTrustUserAccount,
 } from "../../src/evm/client";
@@ -38,6 +39,13 @@ function member(wallet: string, referrer: string, currentSlot = 1): SolTrustUser
 }
 
 describe("legacy referral-derived matrix", () => {
+  it("matches sponsor wallets regardless of checksum capitalization", () => {
+    const sponsor = member(root, ZeroAddress);
+    const child = member(first, root.toUpperCase());
+
+    expect(getDirectReferralUsers([sponsor, child], root)).toEqual([child]);
+  });
+
   it("fills three sponsor positions then spills breadth-first", () => {
     const users = [
       member(root, ZeroAddress), member(first, root), member(second, root),

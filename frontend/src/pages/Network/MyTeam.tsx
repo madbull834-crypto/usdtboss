@@ -3,7 +3,7 @@ import PageMeta from "../../components/common/PageMeta";
 import SponsorTreeView from "../../components/soltrust/SponsorTreeView";
 
 export default function MyIncomeTree() {
-  const { user, users, directs, descendants, error, matrixParentOf, wallet } = useAccountData();
+  const { user, users, directs, descendants, error, matrixParentOf, wallet, teamLoaded } = useAccountData();
   const incomeTreeData = descendants.map(({user:member},index)=>{
     // The sponsor chain and paid matrix parent are separate relationships:
     // placement can spill into the sponsor's downline once direct positions fill.
@@ -21,7 +21,12 @@ export default function MyIncomeTree() {
       registeredAt:member.registeredAt ? new Date(Number(member.registeredAt)*1000).toISOString().replace("T"," ").slice(0,19) : "—"
     };
   });
-  const summaryStats={rootUser:user?.userId.toString() ?? "—",directTeam:String(directs.length),totalTeam:String(descendants.length),teamLevels:String(Math.max(0,...descendants.map(d=>d.depth)))};
+  const summaryStats={
+    rootUser:user?.userId.toString() ?? "—",
+    directTeam:String(Math.max(user?.directReferralCount ?? 0,directs.length)),
+    totalTeam:teamLoaded ? String(descendants.length) : "Loading…",
+    teamLevels:teamLoaded ? String(Math.max(0,...descendants.map(d=>d.depth))) : "Loading…",
+  };
   // Navigation items
   const navItems = [
     "Genealogy",

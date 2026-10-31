@@ -1,6 +1,8 @@
 import { useMemo, useState, type CSSProperties } from "react";
 import type { SolTrustUserAccount } from "../../evm/client";
 
+const addressKey = (wallet: string) => wallet.toLowerCase();
+
 /** Genealogy (sponsor) tree: each member drawn under the wallet that referred
  * them, built from contract state so it does not depend on event history.
  * This is the referral relationship. It is distinct from paid matrix placement,
@@ -11,19 +13,21 @@ export default function SponsorTreeView({ users, rootWallet, depth = 3 }: {
   depth?: number;
 }) {
   const [focus, setFocus] = useState(rootWallet);
-  const byWallet = useMemo(() => new Map(users.map((u) => [u.wallet, u])), [users]);
+  const byWallet = useMemo(() => new Map(users.map((u) => [addressKey(u.wallet), u])), [users]);
   const directsOf = useMemo(() => {
     const map = new Map<string, SolTrustUserAccount[]>();
     for (const user of users) {
-      if (user.wallet === user.referrer) continue;
-      const list = map.get(user.referrer) ?? [];
+      const walletKey = addressKey(user.wallet);
+      const referrerKey = addressKey(user.referrer);
+      if (walletKey === referrerKey) continue;
+      const list = map.get(referrerKey) ?? [];
       list.push(user);
-      map.set(user.referrer, list);
+      map.set(referrerKey, list);
     }
     return map;
   }, [users]);
 
-  const root = byWallet.get(focus) ?? byWallet.get(rootWallet);
+  const root = byWallet.get(addressKey(focus)) ?? byWallet.get(addressKey(rootWallet));
   if (!root) return <p style={{ color: "#7FD3D9", fontSize: "13px" }}>This wallet is not registered.</p>;
 
   return (
@@ -50,7 +54,7 @@ function Branch({ user, directsOf, level, depth, isRoot = false, onOpen }: {
   isRoot?: boolean;
   onOpen: (wallet: string) => void;
 }) {
-  const directs = directsOf.get(user.wallet) ?? [];
+  const directs = directsOf.get(user.wallet.toLowerCase()) ?? [];
   const expanded = level < depth && directs.length > 0;
   return (
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
