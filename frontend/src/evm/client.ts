@@ -66,6 +66,7 @@ let connected: PublicKey | undefined;
 let connecting: Promise<{publicKey: PublicKey}> | undefined;
 let writing = false;
 let snapshotCache: {expires:number; promise:ReturnType<typeof loadSnapshot>} | undefined;
+let teamSnapshotCache: {expires:number; promise:ReturnType<typeof loadTeamSnapshot>} | undefined;
 let walletSummaryCache: {wallet:string;expires:number;promise:Promise<WalletDashboardSummary>} | undefined;
 let contractCache: Promise<Contract> | undefined;
 let paymentDecimals = 6;
@@ -254,6 +255,7 @@ export function evmProvider() {
     : `Switch your wallet to Local Hardhat (chain ID ${CHAIN_ID}), then click Login again.`);
    connected = new PublicKey(await (await provider.getSigner()).getAddress());
    snapshotCache = undefined;
+   teamSnapshotCache = undefined;
    walletSummaryCache = undefined;
    window.dispatchEvent(new Event("boss:updated"));
    return {publicKey:connected};
@@ -528,6 +530,35 @@ function snapshot() {
  }
  return snapshotCache.promise;
 }
+
+// Team counts only need the immutable Slot-1 registry and each member's
+// sponsor. Keep this independent from historical logs and all-slot placement
+// reads so public-RPC history limits cannot leave the UI showing "Loading".
+async function loadTeamSnapshot() {
+ const c=await contract(), block=await rpc.getBlockNumber(), at={blockTag:block};
+ const length=Number(await c.queueLength(1,at));
+ const wallets=await mapRpc(Array.from({length},(_,index)=>index),
+  index=>c.queueAccount(1,index,at) as Promise<string>);
+ const users=await mapRpc(wallets,async(wallet,index)=>{
+  const id=displayUserIdForQueueIndex(index);
+  displayUserIdCache.set(wallet.toLowerCase(),id);
+  const member=await c.members(wallet,at);
+  return {...userView(wallet,member,id),registeredAt:0n};
+ });
+ const wallet=connected?.toString();
+ return {users,user:wallet ? users.find(item=>item.wallet.toLowerCase()===wallet.toLowerCase()) ?? null : null};
+}
+
+export function getTeamData() {
+ if(!teamSnapshotCache || Date.now()>teamSnapshotCache.expires) {
+  const promise=loadTeamSnapshot().then(result=>{
+   if(teamSnapshotCache?.promise===promise)teamSnapshotCache.expires=Date.now()+30000;
+   return result;
+  }).catch(error=>{if(teamSnapshotCache?.promise===promise)teamSnapshotCache=undefined;throw error;});
+  teamSnapshotCache={expires:Infinity,promise};
+ }
+ return teamSnapshotCache.promise;
+}
 export async function getAllSolTrustUsers(_rpc:JsonRpcProvider) {return (await snapshot()).users;}
 export async function getAllPaymentEvents(_rpc:JsonRpcProvider) {return (await snapshot()).payments;}
 export async function getSolTrustUserAccount(_rpc:JsonRpcProvider,wallet:PublicKey) {
@@ -788,8 +819,9 @@ async function loadWalletDashboardSummary(wallet:string) {
   c.globalQueueLengthA(1).then((v:bigint)=>Number(v),()=>0),
   c.legacyGlobalCount().then((v:bigint)=>Number(v),()=>0),loadLegacyGrowth(c,wallet)
  ]);
+ const user=member.joined ? userView(wallet,member,userId) : null;
  return {
-  user:userView(wallet,member,userId),poolLevel:Number(pool.highestLevel),legacyPoolLevel:legacyLevel,
+  user,poolLevel:Number(pool.highestLevel),legacyPoolLevel:legacyLevel,
   poolJoined:Boolean(pool.joined),totalMembers,totalPool,legacyPool,available:unit(member.withdrawable),
   income:{matrix:unit(matrix),global:unit(global)},legacyIncome:unit(legacy),legacyGlobalIncome:unit(legacyGlobal),legacyGrowthTrees
  };
@@ -843,7 +875,7 @@ export async function mintTestTokens(onStatus:(s:string)=>void=()=>{}) {
   onStatus("Confirm minting 100 test USDT in your wallet. Test BNB is required for gas.");
   const tx=await token.mint(publicKey.toString(),100_000_000n);
   onStatus("Waiting for confirmation: "+tx.hash);await tx.wait();
-  snapshotCache=undefined;window.dispatchEvent(new Event("boss:updated"));
+  snapshotCache=undefined;teamSnapshotCache=undefined;window.dispatchEvent(new Event("boss:updated"));
   onStatus("Confirmed: "+tx.hash);return tx.hash as string;
  } finally {writing=false;}
 }
@@ -919,6 +951,7 @@ async function write(action:"join"|"joinGlobalPool"|"withdraw",sponsor:string,on
   onStatus("Confirm the contract transaction in your wallet.");
   const tx=action==="withdraw"?await c.withdraw():await c[action](sponsor);
   onStatus("Waiting for confirmation: "+tx.hash);await tx.wait();snapshotCache=undefined;
+  teamSnapshotCache=undefined;
   walletSummaryCache=undefined;
   window.dispatchEvent(new Event("boss:updated"));
   onStatus("Confirmed: "+tx.hash);return tx.hash as string;

@@ -69,6 +69,10 @@ live-income payouts, automatic slot/level upgrades, and an explicit chain-ID
 allow-list. See
 `PDF_REQUIREMENTS.md` for the exact assumptions and unresolved contradictions.
 
+The V15 matrix implementation routes Slot N to the Nth upline, then checks
+higher uplines until it finds an active wallet with an open position. If none
+qualifies, the bootstrap/root wallet receives the placement.
+
 ```bash
 npm test
 npm run node

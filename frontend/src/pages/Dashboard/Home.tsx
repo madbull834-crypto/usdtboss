@@ -381,17 +381,23 @@ export default function Home() {
             />
             <BusinessRow
               label="Direct Team"
-              value={String(Math.max(account.user?.directReferralCount ?? 0, account.directs.length))}
+              value={account.user
+                ? String(Math.max(account.user.directReferralCount, account.directs.length))
+                : "—"}
               isMobile={isMobile}
             />
             <BusinessRow
               label="Total Team"
-              value={account.teamLoaded ? String(account.descendants.length) : "Loading…"}
+              value={!account.user
+                ? "—"
+                : account.teamLoaded ? String(account.descendants.length) : "Loading…"}
               isMobile={isMobile}
             />
             <BusinessRow
               label="Status"
-              value={currentUser ? "active" : "—"}
+              value={currentUser
+                ? "Active"
+                : account.wallet && account.accountLoaded ? "Not registered" : "—"}
               isMobile={isMobile}
             />
             <BusinessRow

@@ -199,6 +199,22 @@ and all income and fill counters were verified against pre-upgrade snapshots.
 The receipt contains 72 clear events and zero USDT `Transfer` events. Original
 historical import events remain available in immutable blockchain history.
 
+## V15 Nth-upline slot routing
+
+V15 was deployed and the existing UUPS proxy was upgraded on BSC mainnet.
+
+- Proxy: `0xfF0887f4CF1D69fCc41D1D6B61D464fB229B2040`
+- Implementation: `0x757Bba4fb4EB005D646176053cb93d645bbe28BB`
+- Implementation deployment: `0xca92d3c23bf575e66e03532f1255157241fe644c72012c259b8768866e48499d`
+- Proxy upgrade: `0xff09e1c6ed287e8abe6085bdf3341c5a5b4991a29f96d51d2dfb65309635b771`
+- Upgrade block: `131286348`
+
+Post-upgrade reads confirmed `version() == 15`, the ERC-1967 implementation
+slot points to the address above, and the owner, BSC USDT token, treasury and
+bootstrap/root addresses are unchanged. New Slot-N activations now start at
+the Nth upline, continue upward over inactive or full uplines, and use the root
+as the terminal fallback. No historical placement or income state was rewritten.
+
 ## Registration migration
 
 The previous root `0x676c28c70b27E64C7b72203821f0db66BF022d65`

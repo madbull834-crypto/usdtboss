@@ -15,7 +15,7 @@ contract UsdtBossEducationalV14 is UsdtBossEducationalV6 {
     event LegacyGlobalRecordCleared(address indexed account, uint8 previousLevel);
     event LegacyGlobalRecordsCleared(uint256 count);
 
-    function version() external pure override returns (uint256) {
+    function version() external pure virtual override returns (uint256) {
         return 14;
     }
 

@@ -510,7 +510,8 @@ contract UsdtBossEducational is Initializable, UUPSUpgradeable, OwnableUpgradeab
         Member storage member = members[account];
         if (slot != member.highestSlot + 1) revert InvalidSlot();
 
-        address parent = _openPosition(_placementAnchor(account, slot), slot);
+        address parent = _matrixParentForActivation(account, slot);
+        _prepareMatrixParent(parent, slot);
 
         member.highestSlot = slot;
         activatedAmount[account] = slotPrice(slot);
@@ -538,6 +539,22 @@ contract UsdtBossEducational is Initializable, UUPSUpgradeable, OwnableUpgradeab
         }
     }
 
+    /// @dev Placement hook retained by the original implementation. Later
+    /// storage-compatible implementations can change routing without copying
+    /// the slot activation and accounting logic.
+    function _matrixParentForActivation(address account, uint8 slot)
+        internal
+        view
+        virtual
+        returns (address)
+    {
+        return _openPositionView(_placementAnchor(account, slot), slot);
+    }
+
+    /// @dev Hook for implementations that need to prepare a selected parent
+    /// before its next fill. The original matrix requires no preparation.
+    function _prepareMatrixParent(address, uint8) internal virtual {}
+
     /// @dev The member whose downline receives `account` in `slot`: its sponsor,
     /// or, when the sponsor has not activated that slot, the nearest sponsor-chain
     /// ancestor that has. The bootstrap account holds every slot.
@@ -553,7 +570,7 @@ contract UsdtBossEducational is Initializable, UUPSUpgradeable, OwnableUpgradeab
     /// @dev First member with an open position in `anchor`'s `slot` downline,
     /// searched level by level, left to right (spillover). Falls back to the
     /// global join-order queue only if the search limit is reached.
-    function _openPosition(address anchor, uint8 slot) private returns (address) {
+    function _openPositionView(address anchor, uint8 slot) private view returns (address) {
         address[] memory pending = new address[](MAX_PLACEMENT_SCAN);
         pending[0] = anchor;
         uint256 head;
@@ -563,19 +580,20 @@ contract UsdtBossEducational is Initializable, UUPSUpgradeable, OwnableUpgradeab
             if (childrenFilled[slot][node] < 3) return node;
             address[] storage kids = _matrixChildren[slot][node];
             for (uint256 i; i < kids.length; ++i) {
-                if (tail == MAX_PLACEMENT_SCAN) return _nextQueueParent(slot);
+                if (tail == MAX_PLACEMENT_SCAN) return _nextQueueParentView(slot);
                 pending[tail++] = kids[i];
             }
         }
-        return _nextQueueParent(slot);
+        return _nextQueueParentView(slot);
     }
 
-    function _nextQueueParent(uint8 slot) private returns (address) {
+    function _nextQueueParentView(uint8 slot) private view returns (address) {
         SlotQueue storage queue = _queues[slot];
-        while (childrenFilled[slot][queue.accounts[queue.cursor]] == 3) {
-            queue.cursor += 1;
+        uint256 cursor = queue.cursor;
+        while (childrenFilled[slot][queue.accounts[cursor]] == 3) {
+            cursor += 1;
         }
-        return queue.accounts[queue.cursor];
+        return queue.accounts[cursor];
     }
 
     /// @dev Registers a member at slot 1 without taking a matrix position.

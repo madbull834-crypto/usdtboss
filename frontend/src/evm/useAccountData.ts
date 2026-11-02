@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { evmProvider, getDashboardData, getWalletDashboardSummary, matrixPlacementOf } from "./client";
+import { evmProvider, getDashboardData, getTeamData, getWalletDashboardSummary, matrixPlacementOf } from "./client";
 export function useAccountData() {
  const [data,setData] = useState<Awaited<ReturnType<typeof getDashboardData>> | null>(null);
+ const [teamData,setTeamData] = useState<Awaited<ReturnType<typeof getTeamData>> | null>(null);
  const [summary,setSummary] = useState<Awaited<ReturnType<typeof getWalletDashboardSummary>>>(null);
  const [error,setError] = useState("");
  const [wallet,setWallet] = useState(evmProvider()?.publicKey?.toString() ?? "");
@@ -12,33 +13,38 @@ export function useAccountData() {
    if(live)setError(e instanceof Error?e.message:String(e));
   });
   const refresh=()=>getDashboardData().then(result=>{if(live){setData(result);setError("");}}).catch(e=>{if(live)setError(e instanceof Error?e.message:String(e));});
+  const refreshTeam=()=>getTeamData().then(result=>{if(live){setTeamData(result);setError("");}}).catch(e=>{
+   if(live)setError(e instanceof Error?e.message:String(e));
+  });
   const scheduleFullRefresh=()=>{
    if(fullTimer!==undefined)window.clearTimeout(fullTimer);
    // Give the small wallet-only read first access to rate-limited public RPCs.
    fullTimer=window.setTimeout(()=>void refresh(),750);
   };
-  void refreshSummary().finally(scheduleFullRefresh);
+  void refreshSummary().finally(()=>void refreshTeam().finally(scheduleFullRefresh));
   const summaryTimer=window.setInterval(()=>void refreshSummary(),15000);
+  const teamTimer=window.setInterval(()=>void refreshTeam(),30000);
   const fullRefreshTimer=window.setInterval(()=>void refresh(),60000);
   const updated=()=>{
    setWallet(evmProvider()?.publicKey?.toString() ?? "");
    setSummary(null);
+   setTeamData(null);
    setData(null);
-   void refreshSummary().finally(scheduleFullRefresh);
+   void refreshSummary().finally(()=>void refreshTeam().finally(scheduleFullRefresh));
   };
   window.addEventListener("boss:updated",updated);
-  return ()=>{live=false;if(fullTimer!==undefined)clearTimeout(fullTimer);clearInterval(summaryTimer);clearInterval(fullRefreshTimer);window.removeEventListener("boss:updated",updated);};
+  return ()=>{live=false;if(fullTimer!==undefined)clearTimeout(fullTimer);clearInterval(summaryTimer);clearInterval(teamTimer);clearInterval(fullRefreshTimer);window.removeEventListener("boss:updated",updated);};
  },[]);
  // The full snapshot assigns the public queue-order display ID. Prefer that
  // user once loaded so the fast state summary cannot replace it with the
  // contract's zero legacy ID for post-migration registrations.
- const user=data?.user ?? summary?.user ?? null;
+ const user=data?.user ?? teamData?.user ?? summary?.user ?? null;
  const effectiveData=useMemo(()=>summary
   ? data ? {...data,...summary,user} : {
-    users:[],payments:[],placements:[],history:[],historyError:null,...summary,user
+    users:teamData?.users ?? [],payments:[],placements:[],history:[],historyError:null,...summary,user
    }
-  : data,[data,summary,user]);
- const users=data?.users ?? [];
+  : data,[data,summary,teamData,user]);
+ const users=data?.users ?? teamData?.users ?? [];
  const placements=data?.placements ?? [];
  const addressKey=(address:string)=>address.toLowerCase();
  // Legacy members select the referral-derived topology; new members select
@@ -53,5 +59,9 @@ export function useAccountData() {
   children.forEach(user=>{seen.add(addressKey(user.wallet));descendants.push({user,depth});});
   parents=new Set(children.map(u=>addressKey(u.wallet)));
  }
- return {data:effectiveData,error,wallet,user,users,directs,descendants,placements,matrixParentOf,teamLoaded:data!==null};
+ return {
+  data:effectiveData,error,wallet,user,users,directs,descendants,placements,matrixParentOf,
+  accountLoaded:summary!==null || teamData!==null || data!==null,
+  teamLoaded:teamData!==null || data!==null
+ };
 }

@@ -57,6 +57,10 @@ const config: HardhatUserConfig = {
       "contracts/UsdtBossEducationalV14.sol": {
         version: "0.8.26",
         settings: { optimizer: { enabled: true, runs: 1 } }
+      },
+      "contracts/UsdtBossEducationalV15.sol": {
+        version: "0.8.26",
+        settings: { optimizer: { enabled: true, runs: 1 } }
       }
     }
   },

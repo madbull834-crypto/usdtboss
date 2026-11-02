@@ -44,11 +44,11 @@ view facade returning a checksummed EVM hex address; it does not encode base58.
 
 Referral and matrix placement are separate relationships in this contract.
 `join(sponsor)` records the sponsor and increments its `directCount`, then
-`_activateSlot` starts placement at that sponsor. If the sponsor's three positions
-are full, it uses the first open position in the sponsor's downline, breadth-first.
-Automatic higher-slot placement starts at the nearest sponsor-chain ancestor that
-holds that slot. From direct 4 onward, registration follows the contract's direct-
-commission path and creates no paid matrix placement.
+Under V15, `_activateSlot` routes Slot N from the member's Nth upline. It skips
+upward over wallets that have not activated Slot N or whose three Slot-N positions
+are full, and falls back to the bootstrap/root wallet. It does not search downward
+through the selected upline's matrix. From direct 4 onward, registration follows
+the contract's direct-commission path and creates no paid matrix placement.
 
 Both relationships are shown. `SlotActivated` events are decoded into
 `MatrixPlacement` records in `frontend/src/evm/client.ts`; `buildPlacementTree`

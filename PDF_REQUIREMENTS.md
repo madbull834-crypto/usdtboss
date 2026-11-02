@@ -10,11 +10,11 @@ global pool. Page 14 lists fees and automatic upgrades; page 15 is a closing pag
 ### 12-slot 3x3 matrix (pages 5-7)
 
 - A user manually buys only slot 1 for 30 mock USDT.
-- Each slot is an independent 3-child matrix. A new member is placed under
-  their sponsor; when the sponsor's three positions are full, under the first
-  open position in the sponsor's downline, level by level (spillover). An
-  automatic slot upgrade is placed in the downline of the nearest sponsor-chain
-  ancestor that holds that slot (the bootstrap account holds every slot).
+- Each slot is an independent 3-child matrix. Under V15, Slot N placement starts
+  at the member's Nth upline. If that wallet is not active in Slot N or its
+  three positions are full, routing continues upward through the sponsor chain.
+  The bootstrap/root account is the terminal fallback and can reopen a completed
+  root cycle so a fallback payment never becomes stuck.
 - Three payments produce 3x gross. For slots 1-11, 2x is reserved to activate
   the recipient's next slot and 1x becomes withdrawable.
 - Slot 12 has no upgrade, matching the table's "No Upgrade" row.

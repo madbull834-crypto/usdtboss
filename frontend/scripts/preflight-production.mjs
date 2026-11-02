@@ -34,7 +34,7 @@ const [version,token,unit,treasury,root,owner,migrationFinalized]=await Promise.
   boss.version(),boss.paymentToken(),boss.paymentTokenUnit(),boss.treasury(),
   boss.bootstrapAccount(),boss.owner(),boss.migrationFinalized()
 ]);
-if(version!==14n) throw new Error(`Expected contract V14, received V${version}.`);
+if(version!==15n) throw new Error(`Expected contract V15, received V${version}.`);
 if(getAddress(token)!==BSC_USDT || unit!==10n**18n) throw new Error("Contract is not configured for 18-decimal BSC USDT.");
 if(getAddress(treasury)!==EXPECTED_TREASURY) throw new Error("Treasury does not match the approved accounting address.");
 if(getAddress(root)!==EXPECTED_ROOT) throw new Error("Bootstrap account does not match the approved root address.");

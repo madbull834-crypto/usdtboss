@@ -3,7 +3,7 @@ import PageMeta from "../../components/common/PageMeta";
 import SponsorTreeView from "../../components/soltrust/SponsorTreeView";
 
 export default function MyIncomeTree() {
-  const { user, users, directs, descendants, error, matrixParentOf, wallet, teamLoaded } = useAccountData();
+  const { user, users, directs, descendants, error, matrixParentOf, wallet, accountLoaded, teamLoaded } = useAccountData();
   const incomeTreeData = descendants.map(({user:member},index)=>{
     // The sponsor chain and paid matrix parent are separate relationships:
     // placement can spill into the sponsor's downline once direct positions fill.
@@ -23,9 +23,9 @@ export default function MyIncomeTree() {
   });
   const summaryStats={
     rootUser:user?.userId.toString() ?? "—",
-    directTeam:String(Math.max(user?.directReferralCount ?? 0,directs.length)),
-    totalTeam:teamLoaded ? String(descendants.length) : "Loading…",
-    teamLevels:teamLoaded ? String(Math.max(0,...descendants.map(d=>d.depth))) : "Loading…",
+    directTeam:user ? String(Math.max(user.directReferralCount,directs.length)) : "—",
+    totalTeam:!user ? "—" : teamLoaded ? String(descendants.length) : "Loading…",
+    teamLevels:!user ? "—" : teamLoaded ? String(Math.max(0,...descendants.map(d=>d.depth))) : "Loading…",
   };
   // Navigation items
   const navItems = [
@@ -147,7 +147,9 @@ export default function MyIncomeTree() {
             <SponsorTreeView users={users} rootWallet={wallet} />
           ) : (
             <p style={{ color: "#7FD3D9", fontSize: "13px", margin: 0 }}>
-              {wallet ? "Loading your team…" : "Connect your wallet to see your team tree."}
+              {wallet
+                ? accountLoaded ? "This wallet is not registered." : "Checking wallet registration…"
+                : "Connect your wallet to see your team tree."}
             </p>
           )}
         </div>
