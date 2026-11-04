@@ -21,7 +21,11 @@ export function useAccountData() {
    // Give the small wallet-only read first access to rate-limited public RPCs.
    fullTimer=window.setTimeout(()=>void refresh(),750);
   };
-  void refreshSummary().finally(()=>void refreshTeam().finally(scheduleFullRefresh));
+  // Team loading must not wait for the wallet summary. The summary may need to
+  // search the Slot-1 queue for a new member's display ID; serialising these
+  // requests left Total Team showing "Loading" until that unrelated work
+  // completed (or forever when the summary RPC stalled).
+  void Promise.allSettled([refreshSummary(),refreshTeam()]).then(scheduleFullRefresh);
   const summaryTimer=window.setInterval(()=>void refreshSummary(),15000);
   const teamTimer=window.setInterval(()=>void refreshTeam(),30000);
   const fullRefreshTimer=window.setInterval(()=>void refresh(),60000);
@@ -30,7 +34,7 @@ export function useAccountData() {
    setSummary(null);
    setTeamData(null);
    setData(null);
-   void refreshSummary().finally(()=>void refreshTeam().finally(scheduleFullRefresh));
+   void Promise.allSettled([refreshSummary(),refreshTeam()]).then(scheduleFullRefresh);
   };
   window.addEventListener("boss:updated",updated);
   return ()=>{live=false;if(fullTimer!==undefined)clearTimeout(fullTimer);clearInterval(summaryTimer);clearInterval(teamTimer);clearInterval(fullRefreshTimer);window.removeEventListener("boss:updated",updated);};

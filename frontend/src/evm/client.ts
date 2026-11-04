@@ -49,6 +49,10 @@ const ABI = [
  "event UpgradeSavingsChanged(address indexed account,uint256 balance)",
  "event Withdrawn(address indexed member,uint256 amount)"
 ];
+const MULTICALL3_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11";
+const MULTICALL3_ABI = [
+ "function aggregate3(tuple(address target,bool allowFailure,bytes callData)[] calls) payable returns(tuple(bool success,bytes returnData)[] returnData)"
+];
 const TOKEN_ABI = ["function decimals() view returns(uint8)", "function balanceOf(address) view returns(uint256)", "function allowance(address,address) view returns(uint256)", "function approve(address,uint256) returns(bool)", "function mint(address,uint256)"];
 const rpcRequest = new FetchRequest(RPC_URL);
 // Kept well under the old 30s so a stalled public RPC surfaces as a visible
@@ -69,6 +73,7 @@ let snapshotCache: {expires:number; promise:ReturnType<typeof loadSnapshot>} | u
 let teamSnapshotCache: {expires:number; promise:ReturnType<typeof loadTeamSnapshot>} | undefined;
 let walletSummaryCache: {wallet:string;expires:number;promise:Promise<WalletDashboardSummary>} | undefined;
 let contractCache: Promise<Contract> | undefined;
+let multicall3Available: Promise<boolean> | undefined;
 let paymentDecimals = 6;
 let paymentTokenAddress = ZeroAddress;
 const unit = (amount:bigint) => Number(formatUnits(amount,paymentDecimals));
@@ -318,6 +323,44 @@ async function mapRpc<T,R>(items:T[],fn:(item:T,index:number)=>Promise<R>,limit=
  return results;
 }
 
+// Multicall3 is deployed at the same address on BNB mainnet/testnet and turns
+// the registry scan into a handful of eth_call requests. Local or custom
+// networks without it transparently retain the bounded per-call fallback.
+async function mapContractCalls(
+ c:Contract,
+ calls:{method:string;args:unknown[]}[],
+ block:number
+):Promise<unknown[][]|null> {
+ if(!calls.length) return [];
+ multicall3Available ??= rpc.getCode(MULTICALL3_ADDRESS,block)
+  .then(code=>code!=="0x",()=>false);
+ if(!await multicall3Available) return null;
+ const multicall=new Contract(MULTICALL3_ADDRESS,MULTICALL3_ABI,rpc);
+ const output:unknown[][]=[];
+ try {
+  // Keep calldata comfortably below public-node request-size limits.
+  for(let start=0;start<calls.length;start+=80) {
+   const chunk=calls.slice(start,start+80);
+   const request=chunk.map(call=>({
+    target:PROGRAM_ID.toString(),allowFailure:false,
+    callData:c.interface.encodeFunctionData(call.method,call.args)
+   }));
+   const results=await stateRetry(()=>multicall.aggregate3.staticCall(request,{blockTag:block})) as
+    {success:boolean;returnData:string}[];
+   results.forEach((result,index)=>{
+    if(!result.success) throw new Error(`Multicall ${chunk[index].method} failed.`);
+    output.push(Array.from(c.interface.decodeFunctionResult(chunk[index].method,result.returnData)));
+   });
+  }
+  return output;
+ } catch {
+  // A proxy/RPC can reject Multicall even when code exists at the canonical
+  // address. Do not retry it on every refresh in that browser session.
+  multicall3Available=Promise.resolve(false);
+  return null;
+ }
+}
+
 const isRateLimit=(e:unknown)=>/429|too many requests|rate limit|limit exceeded/i.test(errorText(e)+" "+JSON.stringify((e as {info?:unknown})?.info ?? ""));
 const pause=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
 async function fetchRange(from:number,to:number):Promise<Log[]> {
@@ -537,9 +580,19 @@ function snapshot() {
 async function loadTeamSnapshot() {
  const c=await contract(), block=await rpc.getBlockNumber(), at={blockTag:block};
  const length=Number(await c.queueLength(1,at));
- const wallets=await mapRpc(Array.from({length},(_,index)=>index),
-  index=>c.queueAccount(1,index,at) as Promise<string>);
- const users=await mapRpc(wallets,async(wallet,index)=>{
+ const indexes=Array.from({length},(_,index)=>index);
+ const queueBatch=await mapContractCalls(c,indexes.map(index=>({method:"queueAccount",args:[1,index]})),block);
+ const wallets=queueBatch
+  ? queueBatch.map(result=>result[0] as string)
+  : await mapRpc(indexes,index=>c.queueAccount(1,index,at) as Promise<string>);
+ const memberBatch=await mapContractCalls(c,wallets.map(wallet=>({method:"members",args:[wallet]})),block);
+ const users=memberBatch ? wallets.map((wallet,index)=>{
+  const id=displayUserIdForQueueIndex(index);
+  displayUserIdCache.set(wallet.toLowerCase(),id);
+  const decoded=memberBatch[index];
+  const member={sponsor:decoded[1] as string,directCount:decoded[2] as bigint,highestSlot:decoded[3] as bigint};
+  return {...userView(wallet,member,id),registeredAt:0n};
+ }) : await mapRpc(wallets,async(wallet,index)=>{
   const id=displayUserIdForQueueIndex(index);
   displayUserIdCache.set(wallet.toLowerCase(),id);
   const member=await c.members(wallet,at);
